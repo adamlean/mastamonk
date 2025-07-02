@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, Share2, ShoppingCart } from 'lucide-react';
+import './tracklist.css';
 
 const tracks = [
   {
@@ -8,48 +8,48 @@ const tracks = [
     bpm: 93,
     tags: ["oldschool", "50 cent"],
     price: 29.99,
-    image: "track1.jpg",
+    image: "https://via.placeholder.com/50",
   },
-  // другие треки
+  {
+    title: "WRONG MOVE | Hard Boom Bap",
+    time: "03:36",
+    bpm: 93,
+    tags: ["oldschool", "dark beat"],
+    price: 29.99,
+    image: "https://via.placeholder.com/50",
+  },
+  {
+    title: "RECOVER | Gunna x Young Thug Type Beat",
+    time: "03:28",
+    bpm: 170,
+    tags: ["young thug", "gunna"],
+    price: 29.99,
+    image: "https://via.placeholder.com/50",
+  },
 ];
 
 const TrackList = () => {
   return (
-    <div className="bg-black text-white min-h-screen p-4">
-      <div className="max-w-6xl mx-auto space-y-4">
-        {tracks.map((track, idx) => (
-          <div key={idx} className="flex items-center gap-4 bg-zinc-900 p-4 rounded-lg shadow">
-            <img src={track.image} alt={track.title} className="w-16 h-16 rounded" />
-
-            <div className="flex-1">
-              <div className="font-bold">{track.title}</div>
-              <div className="text-sm text-zinc-400">
-                {track.time} · {track.bpm} BPM
-              </div>
-              <div className="flex gap-2 mt-1">
-                {track.tags.map((tag, i) => (
-                  <span key={i} className="bg-white text-black text-xs rounded-full px-2 py-0.5">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <button className="p-2 hover:bg-white/10 rounded">
-                <Download size={18} />
-              </button>
-              <button className="p-2 hover:bg-white/10 rounded">
-                <Share2 size={18} />
-              </button>
-              <button className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
-                <ShoppingCart size={16} className="inline-block mr-1" />
-                ${track.price}
-              </button>
+    <div className="track-list">
+      {tracks.map((track, index) => (
+        <div className="track-card" key={index}>
+          <img src={track.image} alt="cover" className="track-image" />
+          <div className="track-info">
+            <h3>{track.title}</h3>
+            <p>Time: {track.time} | BPM: {track.bpm}</p>
+            <div className="tags">
+              {track.tags.map((tag, i) => (
+                <span key={i} className="tag">{tag}</span>
+              ))}
             </div>
           </div>
-        ))}
-      </div>
+          <div className="track-actions">
+            <button>⬇</button>
+            <button>🔗</button>
+            <button className="buy-btn">${track.price}</button>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
