@@ -3,28 +3,22 @@ import './tracklist.css';
 
 const tracks = [
   {
-    title: "BATTLE | Hard Boom Bap",
+    title: "Blazing Frenzy | Hard Boom Bap",
     time: "03:36",
     bpm: 93,
-    tags: ["oldschool", "50 cent"],
+    tags: ["oldschool", "boom bap"],
     price: 29.99,
     image: "https://via.placeholder.com/50",
+    audio: "../assets/audio/Blazing Frenzy.mp3",
   },
   {
-    title: "WRONG MOVE | Hard Boom Bap",
+    title: "Ghosts of My Past | Hard Boom Bap",
     time: "03:36",
     bpm: 93,
-    tags: ["oldschool", "dark beat"],
+    tags: ["oldschool", "wu tang clan"],
     price: 29.99,
     image: "https://via.placeholder.com/50",
-  },
-  {
-    title: "RECOVER | Gunna x Young Thug Type Beat",
-    time: "03:28",
-    bpm: 170,
-    tags: ["young thug", "gunna"],
-    price: 29.99,
-    image: "https://via.placeholder.com/50",
+    audio: "../assets/audio/Ghosts of My Past.mp3",
   },
 ];
 
