@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
+import './TrackList.css'; // Подключи стили
 
 const tracksData = [
   {
-    title: 'Blazing Frenzy',
-    
+    title: 'Blazing Frenzy (Hip Hop)',
+    author: 'Badaboom',
     genre: 'hiphop',
     time: '02:34',
     bpm: '140',
@@ -11,8 +12,8 @@ const tracksData = [
     src: '../assets/audio/Blazing Frenzy.mp3',
   },
   {
-    title: 'Ghosts of My Past',
-    author: 'Masta Monk',
+    title: 'Ghosts of My Past (EDM)',
+    author: 'Badaboom',
     genre: 'edm',
     time: '02:36',
     bpm: '140',
@@ -20,44 +21,25 @@ const tracksData = [
     src: '../assets/audio/Ghosts of My Past.mp3',
   },
   {
-    title: 'Ocean Flow',
+    title: 'Ocean (Ambient)',
     author: 'Badaboom',
     genre: 'ambient',
-    time: '03:12',
+    time: '03:02',
     bpm: '90',
     key: 'A Minor',
     src: 'audio/ocean.mp3',
   },
-  // Добавь больше треков по необходимости
 ];
 
-const genres = ['all', 'hiphop', 'edm', 'ambient'];
+const genres = [
+  { label: 'All', value: 'all' },
+  { label: 'Hip-Hop', value: 'hiphop' },
+  { label: 'EDM', value: 'edm' },
+  { label: 'Ambient', value: 'ambient' },
+];
 
 export default function TrackList() {
   const [activeGenre, setActiveGenre] = useState('all');
-  const audioRefs = useRef([]);
-
-  useEffect(() => {
-    // Добавляем авто-переход к следующему треку
-    audioRefs.current.forEach((audio, index) => {
-      if (!audio) return;
-
-      audio.onended = () => {
-        const next = audioRefs.current[index + 1];
-        if (next) next.play();
-      };
-
-      audio.onplay = () => {
-        // Останавливаем все остальные
-        audioRefs.current.forEach((other, i) => {
-          if (i !== index && other) {
-            other.pause();
-            other.currentTime = 0;
-          }
-        });
-      };
-    });
-  }, [activeGenre]); // Перезапускаем логику при смене жанра
 
   const filteredTracks =
     activeGenre === 'all'
@@ -65,22 +47,22 @@ export default function TrackList() {
       : tracksData.filter((track) => track.genre === activeGenre);
 
   return (
-    <div>
-      <div className="genre-tabs">
-        {genres.map((genre) => (
+    <div className="playlist-container">
+      <div className="genre-filter">
+        {genres.map((g) => (
           <button
-            key={genre}
-            className={`tab ${activeGenre === genre ? 'active' : ''}`}
-            onClick={() => setActiveGenre(genre)}
+            key={g.value}
+            className={`tab ${activeGenre === g.value ? 'active' : ''}`}
+            onClick={() => setActiveGenre(g.value)}
           >
-            {genre.toUpperCase()}
+            {g.label}
           </button>
         ))}
       </div>
 
       <div className="track-list">
         {filteredTracks.map((track, index) => (
-          <div className="track" key={index} data-genre={track.genre}>
+          <div className="track" key={index}>
             <div className="track-info">
               <p className="title">{track.title}</p>
               <p className="author">{track.author}</p>
@@ -88,11 +70,7 @@ export default function TrackList() {
             <span className="time">{track.time}</span>
             <span className="bpm">{track.bpm}</span>
             <span className="key">{track.key}</span>
-            <audio
-              controls
-              src={track.src}
-              ref={(el) => (audioRefs.current[index] = el)}
-            />
+            <audio controls src={track.src}></audio>
           </div>
         ))}
       </div>
