@@ -9,6 +9,7 @@
   font-family: sans-serif;
   gap: 10px;
   text-decoration: none;
+  margin-top: 15px;
 }
 
 .menu .logo {
@@ -37,6 +38,9 @@
 }
 
 .icon {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
   cursor: pointer;
   transition: color 0.3s ease;
 }

@@ -12,20 +12,20 @@ const Navbar = () => {
 
         {/* МЕНЮ */}
         <nav className="menu">
-          <a href="#tracks" className="hover:text-red-500">Tracks</a>
-          <a href="#services" className="hover:text-red-500">Services</a>
-          <a href="#faq" className="hover:text-red-500">FAQ & Help</a>
-          <a href="#contact" className="hover:text-red-500">Contact</a>
+          <a href="#tracks" >Tracks</a>
+          <a href="#services" >Services</a>
+          <a href="#faq" >FAQ & Help</a>
+          <a href="#contact" >Contact</a>
         </nav>
 
         {/* ИКОНКИ */}
         <div className="icon">
-          <FaSearch className="cursor-pointer hover:text-red-500" />
-          <div className="flex items-center space-x-1">
+          <FaSearch />
+          <div >
             <FaShoppingBag />
             <span>$0.00</span>
           </div>
-          <div className="flex items-center space-x-1 cursor-pointer hover:text-red-500">
+          <div >
             <FaUser />
             <span>Log In</span>
           </div>

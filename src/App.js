@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="container">
       <Navbar />
-      <div className="app-container p-4">
+      <div className="tracks-section">
         <h1 className="tracklist-title">Track List</h1>
         <TrackList />
       </div>
