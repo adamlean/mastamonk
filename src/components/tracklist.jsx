@@ -62,7 +62,7 @@ export default function TrackList() {
             </div>
             <span className="time">{track.time}</span>
             <span className="key">{track.key}</span>
-            <audio controls src={track.src}></audio>
+            <audio controls controlsList="nodownload noplaybackrate" onContextMenu={(e) => e.preventDefault()} src={track.src}></audio>
           </div>
         ))}
       </div>
