@@ -9,7 +9,7 @@ const tracksData = [
     time: '02:34',
     bpm: '140',
     key: 'C# Major',
-    src: '../assets/audio/Blazing Frenzy.mp3',
+    src: '../../public/audio/Blazing Frenzy.mp3',
   },
   {
     title: 'Ghosts of My Past (EDM)',
@@ -18,7 +18,7 @@ const tracksData = [
     time: '02:36',
     bpm: '140',
     key: 'C# Major',
-    src: '../assets/audio/Ghosts of My Past.mp3',
+    src: '../../public/audio/Ghosts of My Past.mp3',
   },
   {
     title: 'Ocean (Ambient)',
