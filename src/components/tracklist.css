@@ -1,61 +1,33 @@
+.genre-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.tab.active {
+  background: #000;
+  color: #fff;
+}
+
 .track-list {
-  max-width: 800px;
-  margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
 }
 
-.track-card {
-  display: flex;
+.track {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto auto;
+  gap: 1rem;
   align-items: center;
-  background: #1e1e1e;
-  color: white;
-  padding: 12px;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.3);
-}
-
-.track-image {
-  width: 50px;
-  height: 50px;
-  border-radius: 4px;
-  margin-right: 16px;
-}
-
-.track-info {
-  flex-grow: 1;
-}
-
-.tags {
-  margin-top: 6px;
-}
-
-.tag {
-  background: #ffffff22;
-  padding: 4px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  margin-right: 6px;
-}
-
-.track-actions {
-  display: flex;
-  gap: 8px;
-}
-
-.track-actions button {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-.buy-btn {
-  background-color: #e53935;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 4px;
-  font-weight: bold;
+  padding: 1rem;
+  border: 1px solid #ccc;
 }
