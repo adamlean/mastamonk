@@ -11,7 +11,7 @@
   text-decoration: none;
 }
 
-.navbar__logo {
+.menu .logo {
   color: red;
   font-size: 24px;
   font-weight: bold;
@@ -19,7 +19,7 @@
   letter-spacing: 2px;
 }
 
-.navbar__menu a {
+.menu a {
   margin: 0 12px;
   color: white;
   text-decoration: none;
@@ -27,11 +27,11 @@
   transition: color 0.3s ease;
 }
 
-.navbar__menu a:hover {
+.menu a:hover {
   color: red;
 }
 
-.navbar__icons {
+.menu .icons {
   display: flex;
   gap: 20px;
 }
