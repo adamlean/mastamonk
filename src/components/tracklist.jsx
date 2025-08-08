@@ -6,7 +6,7 @@ const genres = [
   { label: "All", value: "all" },
   { label: "Boom Bap", value: "boom bap" },
   { label: "G Funk", value: "g funk" },
-  { label: "Ambient", value: "ambient" }
+  { label: "Soul", value: "soul" }
 ];
 
 export default function TrackList() {
